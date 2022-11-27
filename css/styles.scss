@@ -1,6 +1,13 @@
 /* Import Roboto Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+*:root {
+    --color-primary: rgb(209, 230, 20);
+    --color-secondary: rgb(154, 9, 9);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0, 0, 0);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -15,5 +22,24 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 4rem;
-    color: var(white);
+    color: var(--color-white);
+
+    parallax-wrapper {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        perspective: 300px;
+    }
+
+    .intro-screen {
+        height: 100vh;
+        background-color: var(--color-primary);
+        @include align-center;
+    }
+
+    .outro-screen {
+        height: 100vh;
+        background-color: var(--color-secondary);
+        @include align-center;
+    }
 }
