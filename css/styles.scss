@@ -7,10 +7,10 @@
     --color-white: rgb(255, 255, 255);
     --color-black: rgb(0, 0, 0);
     --color-aqua: rgb(0, 255, 255);
-    --color-green: rgb(124,252,0);
+    --color-green: rgb(124, 252, 0);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -26,7 +26,7 @@ body {
     font-size: 4rem;
     color: var(--color-white);
 
-    parallax-wrapper {
+    .parallax-wrapper {
         height: 100vh;
         overflow-x: hidden;
         overflow-y: auto;
@@ -44,7 +44,7 @@ body {
         background-color: var(--color-secondary);
         @include align-center;
     }
-    
+
     .parallax-group {
         position: relative;
         height: 100vh;
@@ -55,19 +55,39 @@ body {
             inset: 0;
             @include align-center;
         }
+
+        .base-layer {
+            // scale calculation: 1 + ((z Transform Value * -1) / perspective)
+            transform: translateZ(-300px) scale(2);
+        }
+
+        .mid-layer {
+            transform: translateZ(0);
+        }
+
+        .top-layer {
+            transform: translateZ(210px) scale(0.3);
+        }
     }
-    #intro {}
 
-    #group-1 {}
-
-    #group-1 > .base-layer {
-        background-color: var(--color-black);
+    #intro {
+        z-index: 0;
     }
 
-    #group2 {}
+    #group-1 {
+        z-index: -1;
+    }
 
-    #group-2 > .mid-layer{
-        background-color: aqua;
+    #group-1>.base-layer {
+        background-color: var(--color-green);
+    }
+
+    #group2 {
+        z-index: 0;
+    }
+
+    #group-2>.mid-layer {
+        background-color: var(--color-aqua);
     }
 
     #outro {}

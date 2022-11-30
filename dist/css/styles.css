@@ -6,7 +6,7 @@
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(0, 0, 0);
   --color-aqua: rgb(0, 255, 255);
-  --color-green: rgb(124,252,0);
+  --color-green: rgb(124, 252, 0);
 }
 
 * {
@@ -19,7 +19,7 @@ body {
   font-size: 4rem;
   color: var(--color-white);
 }
-body parallax-wrapper {
+body .parallax-wrapper {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -51,9 +51,27 @@ body .parallax-group .parallax-layer {
   justify-content: center;
   align-items: center;
 }
+body .parallax-group .base-layer {
+  transform: translateZ(-300px) scale(2);
+}
+body .parallax-group .mid-layer {
+  transform: translateZ(0);
+}
+body .parallax-group .top-layer {
+  transform: translateZ(210px) scale(0.3);
+}
+body #intro {
+  z-index: 0;
+}
+body #group-1 {
+  z-index: -1;
+}
 body #group-1 > .base-layer {
-  background-color: var(--color-black);
+  background-color: var(--color-green);
+}
+body #group2 {
+  z-index: 0;
 }
 body #group-2 > .mid-layer {
-  background-color: aqua;
+  background-color: var(--color-aqua);
 }/*# sourceMappingURL=styles.css.map */
