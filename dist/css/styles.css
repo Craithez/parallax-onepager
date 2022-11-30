@@ -5,6 +5,8 @@
   --color-secondary: rgb(154, 9, 9);
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(0, 0, 0);
+  --color-aqua: rgb(0, 255, 255);
+  --color-green: rgb(124,252,0);
 }
 
 * {
@@ -48,4 +50,10 @@ body .parallax-group .parallax-layer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+body #group-1 > .base-layer {
+  background-color: var(--color-black);
+}
+body #group-2 > .mid-layer {
+  background-color: aqua;
 }/*# sourceMappingURL=styles.css.map */
